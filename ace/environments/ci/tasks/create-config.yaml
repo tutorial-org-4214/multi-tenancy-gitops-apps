@@ -222,6 +222,12 @@ spec:
 
         git config --global --add safe.directory $(workspaces.workspace.path)/$(params.repo-directory)
 
+        # Get the current repository name
+        REPO_NAME=$(basename -s .git "$(git config --get remote.origin.url)")
+        
+        # Set the remote URL with the personal access token
+        git remote set-url origin "https://hakanoral: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@github.com/$(git config --get remote.origin.url | cut -d/ -f4)/${REPO_NAME}.git"
+
         if [[ $(git status -s | wc -l) -eq 0 ]]; then
           echo "No changes"
           exit 0
