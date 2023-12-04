@@ -238,7 +238,7 @@ spec:
         git commit -m "Add configurations"
 
         git status
-        git push --set-upstream origin ${BRANCH_NAME}
+        #git push --set-upstream origin ${BRANCH_NAME}
 
 
   workspaces:
