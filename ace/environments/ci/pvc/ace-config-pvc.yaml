@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: ace-config-pvc
 spec:
-  storageClassName: managed-nfs-storage
+  storageClassName: thin-csi
   accessModes:
   - ReadWriteMany
   resources:
